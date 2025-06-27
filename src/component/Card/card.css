@@ -1,0 +1,31 @@
+.cardBox {
+  border: 2px solid black;
+  height: 450px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.cardBox img{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.cardBox h1{
+  color: blue;
+}
+
+.cardBox p {
+  font-size: 15px;
+}
+
+.btn-cn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

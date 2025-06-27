@@ -1,0 +1,9 @@
+.txtInput1 {
+  padding: 10px 2px;
+  width: 300px;
+  margin: 10px;
+}
+
+.txtInput1::placeholder{
+  font-size: 13px;
+}

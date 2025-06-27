@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import DashBoard from "../pages/Home/MUI/DashBoard";
 import { useEffect, useState } from "react";
+import { ThemeProvider } from "../context/ThemeContext";
 
 function App() {
   const [logIn, setLogIn] = useState(false);
@@ -26,17 +27,19 @@ function App() {
   }, []);
 
   return (
-    <div>
-      {logIn ? (
-        <DashBoard />
-      ) : (
-        <Routes>
-          <Route path="*" element={<Navigate to={"/login"} />}></Route>
-          <Route path="/login" element={<MuiLoginPage />}></Route>
-          <Route path="/register" element={<MuiRegisterPage />}></Route>
-        </Routes>
-      )}
-    </div>
+    <ThemeProvider>
+      <div>
+        {logIn ? (
+          <DashBoard />
+        ) : (
+          <Routes>
+            <Route path="*" element={<Navigate to={"/login"} />}></Route>
+            <Route path="/login" element={<MuiLoginPage />}></Route>
+            <Route path="/register" element={<MuiRegisterPage />}></Route>
+          </Routes>
+        )}
+      </div>
+    </ThemeProvider>
   );
 }
 

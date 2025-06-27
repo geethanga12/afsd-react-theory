@@ -8,6 +8,7 @@ import SubmitForm from "./About/submitForm";
 import { Box, Typography, TextField, Stack, Button } from "@mui/material";
 import { useState } from "react";
 import axios from "axios";
+import ThemeToggle from "../../component/ThemeToggle";
 
 export default function Home() {
   const [name, setName] = useState();
@@ -116,6 +117,7 @@ export default function Home() {
   return (
     <div>
       <h1>Home</h1>
+      <ThemeToggle />
       <h1>Welcome to Home Page</h1>
 
       <Box sx={{ border: "4px solid blue", padding: "10px" }}>

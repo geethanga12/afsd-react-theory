@@ -20,9 +20,23 @@ export default function Mui() {
     <div>
       <h1>Mui</h1>
 
-      <Box sx={{backgroundColor: 'red', width: 100, height: 100}}>
+      <Button
+        onClick={sessionStorage.setItem("afsd-08", "AFSD - 08")}
+        sx={{ fontSize: "18px", margin: "20px 0" }}
+        variant="contained"
+      >
+        SS Set
+      </Button>
 
-      </Box>
+      <Button
+        onClick={console.log(sessionStorage.getItem("afsd-08"))}
+        sx={{ fontSize: "18px", margin: "20px 0" }}
+        variant="contained"
+      >
+        SS get
+      </Button>
+
+      <Box sx={{ backgroundColor: "red", width: 100, height: 100 }}></Box>
 
       <Stack spacing={2} direction="row" marginBottom={5}>
         <Button variant="text">Text</Button>

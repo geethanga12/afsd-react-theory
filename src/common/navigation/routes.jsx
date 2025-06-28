@@ -3,6 +3,7 @@ import Home from "../../pages/Home/Home";
 import MuiRegisterPage from "../../pages/Home/MuiLogInRegister/MuiRegisterPage";
 import MuiLoginPage from "../../pages/Home/MuiLogInRegister/MuiLoginPage";
 import Mui from "../../pages/Home/MUI/Mui";
+import DashBoard from "../../pages/Home/MUI/DashBoard";
 
 export const routes = [
   {
@@ -29,5 +30,10 @@ export const routes = [
     path: "/mui",
     element: <Mui></Mui>,
     name: "Mui",
+  },
+  {
+    path: "/dashboard",
+    element: <DashBoard></DashBoard>,
+    name: "Dashboard",
   },
 ];

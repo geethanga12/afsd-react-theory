@@ -34,7 +34,8 @@ export default function Student() {
         }
       )
       .then((response) => {
-        alert(response);
+        alert(response.data);
+        getAllStudent();
         setName("");
         setAge(0);
         setAddress("");
@@ -71,7 +72,8 @@ export default function Student() {
         },
       })
       .then((response) => {
-        alert(response);
+        alert(response.data);
+        getAllStudent();
         setId("");
       })
       .catch((error) => {
@@ -97,7 +99,8 @@ export default function Student() {
         }
       )
       .then((response) => {
-        alert(response);
+        alert(response.data);
+        getAllStudent();
         setName("");
         setAge("");
         setAddress("");

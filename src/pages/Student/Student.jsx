@@ -18,21 +18,12 @@ export default function Student() {
 
   const saveStudent = () => {
     instance
-      .post(
-        "student/save",
-        {
-          student_name: name,
-          student_age: age,
-          student_address: address,
-          student_contact: contact,
-        },
-        {
-          headers: {
-            Authorization:
-              "Bearer 4311|ZNj2wGBnGXsuBbNkqDMlsJ1awlyqU4ya6TrXZvZL683db572",
-          },
-        }
-      )
+      .post("student/save", {
+        student_name: name,
+        student_age: age,
+        student_address: address,
+        student_contact: contact,
+      })
       .then((response) => {
         alert(response.data);
         getAllStudent();
@@ -48,12 +39,7 @@ export default function Student() {
 
   const getAllStudent = () => {
     instance
-      .get("student/getAll", {
-        headers: {
-          Authorization:
-            "Bearer 4311|ZNj2wGBnGXsuBbNkqDMlsJ1awlyqU4ya6TrXZvZL683db572",
-        },
-      })
+      .get("student/getAll")
       .then((response) => {
         setAllStudentData(response.data);
         console.log();
@@ -65,12 +51,7 @@ export default function Student() {
 
   const deleteStudent = () => {
     instance
-      .delete(`student/delete/${id}`, {
-        headers: {
-          Authorization:
-            "Bearer 4311|ZNj2wGBnGXsuBbNkqDMlsJ1awlyqU4ya6TrXZvZL683db572",
-        },
-      })
+      .delete(`student/delete/${id}`)
       .then((response) => {
         alert(response.data);
         getAllStudent();
@@ -83,21 +64,12 @@ export default function Student() {
 
   const updateStudent = () => {
     instance
-      .put(
-        `student/update/${id}`,
-        {
-          student_name: name,
-          student_age: age,
-          student_address: address,
-          student_contact: contact,
-        },
-        {
-          headers: {
-            Authorization:
-              "Bearer 4311|ZNj2wGBnGXsuBbNkqDMlsJ1awlyqU4ya6TrXZvZL683db572",
-          },
-        }
-      )
+      .put(`student/update/${id}`, {
+        student_name: name,
+        student_age: age,
+        student_address: address,
+        student_contact: contact,
+      })
       .then((response) => {
         alert(response.data);
         getAllStudent();

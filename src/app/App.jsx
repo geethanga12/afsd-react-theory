@@ -12,6 +12,7 @@ import {
 import DashBoard from "../pages/Home/MUI/DashBoard";
 import { useEffect, useState } from "react";
 import { ThemeProvider } from "../context/ThemeContext";
+import Student from "../pages/Student/Student";
 
 function App() {
   const [logIn, setLogIn] = useState(false);
@@ -36,6 +37,7 @@ function App() {
             <Route path="*" element={<Navigate to={"/login"} />}></Route>
             <Route path="/login" element={<MuiLoginPage />}></Route>
             <Route path="/register" element={<MuiRegisterPage />}></Route>
+            <Route path="/studentMS" element={<Student />}></Route>
           </Routes>
         )}
       </div>

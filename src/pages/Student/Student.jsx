@@ -1,33 +1,25 @@
-// import Button from "../../common/component/Button/Button";
-import TextInput from "../../common/component/TextInput/TextInput";
-import TI2 from "../../common/component/TextInput/TI2";
-import Card from "../../component/Card/Card";
-import img from "../../assets/Geeth.JPG";
-import About from "./About/About";
-import SubmitForm from "./About/submitForm";
 import { Box, Typography, TextField, Stack, Button } from "@mui/material";
-import { useState } from "react";
-import axios from "axios";
-import ThemeToggle from "../../component/ThemeToggle";
+import instance from "../../service/AxiosOrder";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Home() {
+export default function Student() {
+  const [id, setId] = useState();
   const [name, setName] = useState();
   const [age, setAge] = useState();
   const [address, setAddress] = useState();
   const [contact, setContact] = useState();
   const [allStudentData, setAllStudentData] = useState([]);
-  const [id, setId] = useState();
 
   const navigate = useNavigate();
-  const StudentMSPageNav = () => {
-    navigate("/studentMS");
+  const StudentMSPage = () => {
+    navigate("/home");
   };
 
   const saveStudent = () => {
-    axios
+    instance
       .post(
-        "https://student-api.acpt.lk/api/student/save",
+        "student/save",
         {
           student_name: name,
           student_age: age,
@@ -54,15 +46,16 @@ export default function Home() {
   };
 
   const getAllStudent = () => {
-    axios("https://student-api.acpt.lk/api/student/getAll", {
-      headers: {
-        Authorization:
-          "Bearer 4311|ZNj2wGBnGXsuBbNkqDMlsJ1awlyqU4ya6TrXZvZL683db572",
-      },
-    })
+    instance
+      .get("student/getAll", {
+        headers: {
+          Authorization:
+            "Bearer 4311|ZNj2wGBnGXsuBbNkqDMlsJ1awlyqU4ya6TrXZvZL683db572",
+        },
+      })
       .then((response) => {
         setAllStudentData(response.data);
-        console.log(allStudentData);
+        console.log();
       })
       .catch((error) => {
         console.log(error);
@@ -70,18 +63,16 @@ export default function Home() {
   };
 
   const deleteStudent = () => {
-    axios
-      .delete(`https://student-api.acpt.lk/api/student/delete/${id}`, {
+    instance
+      .delete(`student/delete/${id}`, {
         headers: {
           Authorization:
             "Bearer 4311|ZNj2wGBnGXsuBbNkqDMlsJ1awlyqU4ya6TrXZvZL683db572",
         },
       })
       .then((response) => {
-        alert("Student delete successfully");
-        getAllStudent();
+        alert(response);
         setId("");
-        console.log(response);
       })
       .catch((error) => {
         console.log(error);
@@ -89,9 +80,9 @@ export default function Home() {
   };
 
   const updateStudent = () => {
-    axios
+    instance
       .put(
-        `https://student-api.acpt.lk/api/student/update/${id}`,
+        `student/update/${id}`,
         {
           student_name: name,
           student_age: age,
@@ -106,14 +97,11 @@ export default function Home() {
         }
       )
       .then((response) => {
-        alert("Student Update Successfully");
-        getAllStudent();
-        setId("");
+        alert(response);
         setName("");
         setAge("");
         setAddress("");
         setContact("");
-        console.log(response);
       })
       .catch((error) => {
         console.log(error);
@@ -122,17 +110,7 @@ export default function Home() {
 
   return (
     <div>
-      <h1>Home</h1>
-      <ThemeToggle />
-      <h1>Student Management System</h1>
-
-      <Button
-        onClick={StudentMSPageNav}
-        sx={{ fontSize: "18px", margin: "20px 0"}}
-        variant="contained"
-      >
-        Student Management System Page
-      </Button>
+      <Typography variant="h4">Student Management System</Typography>
 
       <Box sx={{ border: "4px solid blue", padding: "10px" }}>
         <Stack direction={"column"} spacing={"10px"} width={"400px"}>
@@ -284,41 +262,14 @@ export default function Home() {
             </Button>
           </Stack>
         </Box>
-      </Box>
 
-      <Box>
-        {/* <Button name={'ADD Button'} bgColor={'blue'} onClick={() => console.log('Hello Geeth')}></Button>
-      <Button name={'Update Button'} bgColor={'green'} onClick={() => console.log('Hello Prasadith')}></Button>
-      <Button name={'Update Button'} bgColor={'black'} onClick={() => console.log('Hi Dissa....')}></Button> <br /> <br /> */}
-
-        <TextInput pH={"Enter Name"} type={"text"}></TextInput>
-        <TextInput pH={"Enter Age"} type={"number"}></TextInput>
-        <TextInput pH={"Enter Email"} type={"text"}></TextInput>
-
-        <TI2
-          pH={"Enter Email"}
-          type={"text"}
-          onChange={(e) => console.log(e.target.value)}
-        ></TI2>
-
-        <Card
-          title={"Geethanga Dissanayake"}
-          description={"Lives in Kurunegala"}
-          image={img}
+        <Button
+          onClick={StudentMSPage}
+          sx={{ fontSize: "18px" }}
+          variant="contained"
         >
-          {/* <div className="btn-cn">
-          <Button
-            name={"Subscribe"}
-            bgColor={"red"}
-            onClick={() => console.log("Click me")}
-          ></Button>
-          <Button name={"Log in"} bgColor={"blue"}></Button>
-        </div> */}
-        </Card>
-
-        <About></About>
-
-        <SubmitForm></SubmitForm>
+          Home Page
+        </Button>
       </Box>
     </div>
   );

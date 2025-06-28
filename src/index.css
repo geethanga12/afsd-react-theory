@@ -8,8 +8,6 @@ body {
   transition: all 0.3s ease;
 }
 
-
-/* Toggle switch container */
 .switch {
   position: relative;
   display: inline-block;
@@ -17,14 +15,12 @@ body {
   height: 34px;
 }
 
-/* Hide default HTML checkbox */
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-/* Slider */
 .slider {
   position: absolute;
   cursor: pointer;

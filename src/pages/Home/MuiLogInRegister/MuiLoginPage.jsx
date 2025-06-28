@@ -5,7 +5,8 @@ import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
+import instance from "../../../service/AxiosOrder";
 
 export default function MuiLoginPage() {
   const [email, setEmail] = useState("");
@@ -14,8 +15,7 @@ export default function MuiLoginPage() {
   // Log In Button
   const handleRegisterClick3 = () => {
     //API with axios
-    axios
-      .post("https://student-api.acpt.lk/api/login", {
+    instance.post("login", {
         email: email,
         password: password,
       })

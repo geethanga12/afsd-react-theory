@@ -27,6 +27,7 @@ import {
 import Home from "../Home";
 import Mui from "./Mui";
 import { Button } from "@mui/material";
+import Student from "../../Student/Student";
 
 const drawerWidth = 240;
 
@@ -278,6 +279,7 @@ export default function DashBoard() {
             <Route path="*" element={<Navigate to={"/home"}/>}></Route>
             <Route path="/home" element={<Home></Home>}></Route>
             <Route path="/mui" element={<Mui></Mui>}></Route>
+            <Route path="/studentMS" element={<Student></Student>}></Route>
           </Routes>
         </Box>
       </Box>

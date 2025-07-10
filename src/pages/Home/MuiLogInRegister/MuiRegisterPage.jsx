@@ -20,7 +20,7 @@ export default function MuiRegisterPage() {
     setEmail(e.target.value);
   }
 
-  function valudatePassword(e) {
+  function validatePassword(e) {
     setPassword(e.target.value);
   }
 
@@ -109,7 +109,7 @@ export default function MuiRegisterPage() {
             label="Enter your password"
             variant="outlined"
             value={password}
-            onChange={valudatePassword}
+            onChange={validatePassword}
             type="password"
           />
         </Box>

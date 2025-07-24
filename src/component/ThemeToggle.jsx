@@ -11,3 +11,5 @@ export default function ThemeToggle() {
     </label>
   );
 }
+
+// This is toggle button allows users to switch between light and dark themes in the application.

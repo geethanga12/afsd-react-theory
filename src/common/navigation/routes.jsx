@@ -1,9 +1,9 @@
-import Student from "../../pages/Student/Student";
-import Home from "../../pages/Home/Home";
-import MuiRegisterPage from "../../pages/Home/MuiLogInRegister/MuiRegisterPage";
-import MuiLoginPage from "../../pages/Home/MuiLogInRegister/MuiLoginPage";
-import Mui from "../../pages/Home/MUI/Mui";
-import DashBoard from "../../pages/Home/MUI/DashBoard";
+import Student from "../../pages/All/Student/Student";
+import Home from "../../pages/All/Home";
+import MuiRegisterPage from "../../pages/All/MuiLogInRegister/MuiRegisterPage";
+import MuiLoginPage from "../../pages/All/MuiLogInRegister/MuiLoginPage";
+import Mui from "../../pages/All/MUI/Mui";
+import DashBoard from "../../pages/All/MUI/DashBoard";
 
 export const routes = [
   {

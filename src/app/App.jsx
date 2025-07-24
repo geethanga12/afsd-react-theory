@@ -1,18 +1,18 @@
-import Home from "../pages/Home/Home";
+import Home from "../pages/All/Home";
 import "./App.css";
-import Mui from "../pages/Home/MUI/Mui";
-import MuiLoginPage from "../pages/Home/MuiLogInRegister/MuiLoginPage";
-import MuiRegisterPage from "../pages/Home/MuiLogInRegister/MuiRegisterPage";
+import Mui from "../pages/All/MUI/Mui";
+import MuiLoginPage from "../pages/All/MuiLogInRegister/MuiLoginPage";
+import MuiRegisterPage from "../pages/All/MuiLogInRegister/MuiRegisterPage";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
 } from "react-router-dom";
-import DashBoard from "../pages/Home/MUI/DashBoard";
+import DashBoard from "../pages/All/MUI/DashBoard";
 import { useEffect, useState } from "react";
 import { ThemeProvider } from "../context/ThemeContext";
-import Student from "../pages/Student/Student";
+import Student from "../pages/All/Student/Student";
 
 function App() {
   const [logIn, setLogIn] = useState(false);

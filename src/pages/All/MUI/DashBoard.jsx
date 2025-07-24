@@ -28,7 +28,7 @@ import {
 import Home from "../Home";
 import Mui from "./Mui";
 import { Button } from "@mui/material";
-import Student from "../../Student/Student";
+import Student from "../Student/Student";
 import { routes } from "../../../common/navigation/Routes";
 
 const drawerWidth = 240;
